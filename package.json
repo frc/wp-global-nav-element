@@ -22,10 +22,13 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@webcomponents/custom-elements": "^1.1.1",
+    "angularfire2": "^5.0.0-rc.10",
     "core-js": "^2.5.4",
+    "document-register-element": "^1.7.2",
+    "firebase": "^5.0.4",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26",
-    "document-register-element": "^1.7.2"
+    "rxjs-compat": "^6.2.0",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.3",

@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-global-nav',
   templateUrl: './global-nav.component.html',
   styleUrls: ['./global-nav.component.css'],
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class GlobalNavComponent implements OnInit {
 

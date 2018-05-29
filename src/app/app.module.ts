@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { GlobalNavComponent } from './global-nav/global-nav.component';
 
 const config = { 
   apiKey: "AIzaSyD4ACaSUieDKMJMRH3vTlJPkl4lD38qoj0",
@@ -16,7 +17,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
-    AppComponent
+    GlobalNavComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +25,16 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFirestoreModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [],
+  entryComponents: [
+    GlobalNavComponent
+  ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const el = createCustomElement(GlobalNavComponent, { injector: this.injector });
+    customElements.define('wp-global-nav', el);
+   }
+}

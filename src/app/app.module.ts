@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { HttpClientModule } from '@angular/common/http';
+
+import { GlobalNavService } from './global-nav/global-nav.service';
 
 import { GlobalNavComponent } from './global-nav/global-nav.component';
 
@@ -22,9 +25,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(config),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GlobalNavService],
   bootstrap: [],
   entryComponents: [
     GlobalNavComponent

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, ChangeDetectorRef } from '@angular/core';
 import {GlobalNavService} from './global-nav.service';
 
 @Component({
@@ -9,12 +9,12 @@ import {GlobalNavService} from './global-nav.service';
 })
 export class GlobalNavComponent implements OnInit {
 
-  public menus;
+  public menu: any = [];
 
   @Input()
   public url: string;
 
-  constructor(private _globalNavService: GlobalNavService) { 
+  constructor(private _globalNavService: GlobalNavService, private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -23,9 +23,12 @@ export class GlobalNavComponent implements OnInit {
 
   getMenus(url) {
     this._globalNavService.getMenus(url).subscribe(
-      data => {this.menus = data},
-      err => console.error(err),
-      () => console.log(this.menus),
+      data => {
+        this.menu = data;
+        this.cdr.detectChanges();
+        console.log(this.menu);
+      },
+      err => console.error(err)
     );
   }
 

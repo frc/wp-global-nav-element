@@ -7,6 +7,12 @@
   border-bottom: #c8c8c8 1px solid;
 }
 
+@media (max-width: 64em) {
+  .global-nav {
+    display: none;
+  }
+}
+
 .global-nav__item {
   display: inline-block;
   flex: 1;

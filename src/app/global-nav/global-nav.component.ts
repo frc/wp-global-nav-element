@@ -26,9 +26,11 @@ export class GlobalNavComponent implements OnInit {
       data => {
         this.menu = data;
         this.cdr.detectChanges();
-        console.log(this.menu);
+        // console.log(this.menu);
       },
-      err => console.error(err)
+      err => {
+        // console.error(err);
+      }
     );
   }
 

@@ -1,8 +1,8 @@
 <ul class="global-nav">
-  <li class="global-nav__item" *ngFor="let item of menu.items">
-    <a class="global-nav__item-link" href="{{ item.url }}">
+  <a class="global-nav__link" href="{{ item.url }}" target="{{ item.target }}" *ngFor="let item of menu.items">
+    <li class="global-nav__item">
       <div class="global-nav__item-title">{{ item.title }}</div>
       <div class="global-nav__item-description">{{ item.description }}</div>
-    </a>
-  </li>
+    </li>
+  </a>
 </ul>

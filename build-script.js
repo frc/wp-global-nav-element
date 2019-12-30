@@ -4,10 +4,10 @@ const concat = require('concat');
 (async function build() {
 
     const files =[
-        './dist/wordpressGlobalNav/runtime.js',
-        './dist/wordpressGlobalNav/polyfills.js',
+        './dist/wordpressGlobalNav/runtime-es2015.js',
+        './dist/wordpressGlobalNav/polyfills-es2015.js',
         './dist/wordpressGlobalNav/scripts.js',
-        './dist/wordpressGlobalNav/main.js'
+        './dist/wordpressGlobalNav/main-es2015.js'
     ]
     
     await fs.ensureDir('elements')
